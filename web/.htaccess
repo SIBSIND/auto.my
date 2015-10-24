@@ -1,14 +1,7 @@
-# Устанавливаем корневой директорией "basic/web"
-DocumentRoot "D:\Denwer\home\auto.my\www\basic\web"
-
-<Directory "D:\Denwer\home\auto.my\www\basic\web">
-    RewriteEngine on
-
-    # Если запрашиваемая в URL директория или файл существуют обращаемся к ним напрямую
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    # Если нет - перенаправляем запрос на index.php
-    RewriteRule . index.php
-
-    # ...прочие настройки...
-</Directory>
+AddDefaultCharset UTF-8
+RewriteEngine on
+# If a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Otherwise forward it to index.php
+RewriteRule . index.php

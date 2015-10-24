@@ -17,12 +17,16 @@ $config = [
             'showScriptName' => false,
             // Disable r= routes
             'enablePrettyUrl' => true,
-
+            'rules' => [
+                '' => 'site/index',
+                '<action>'=>'site/<action>',
+            ],
         ],
 
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'zCD8BPV3v3BKS1fQ4kh2f7tzytjxCrP6',
+
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
